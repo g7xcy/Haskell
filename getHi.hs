@@ -1,0 +1,2 @@
+getHi :: () -> String
+getHi () = "Hi"
