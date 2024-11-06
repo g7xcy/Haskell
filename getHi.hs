@@ -1,2 +1,0 @@
-getHi :: () -> String
-getHi () = "Hi"
