@@ -1,4 +1,4 @@
-import Data.List (foldl')
+import           Data.List (foldl')
 
 myReverse :: [a] -> [a]
 -- myReverse []     = []
