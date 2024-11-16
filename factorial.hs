@@ -4,4 +4,4 @@ factorial n = n * factorial (n - 1)
 
 main :: IO()
 main = do
-    putStrLn (show (factorial 10))
+    print(factorial 10)

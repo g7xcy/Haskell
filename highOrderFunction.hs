@@ -10,4 +10,4 @@ add15 = add5 10
 
 
 main = do
-    putStrLn( show( add15 1))
+    print( add15 1)
