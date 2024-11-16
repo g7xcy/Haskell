@@ -1,6 +1,7 @@
 myMap :: (a -> b) -> [a] -> [b]
-myMap _ []     = []
-myMap f (x:xs) = f x : myMap f xs
+-- myMap _ []     = []
+-- myMap f (x:xs) = f x : myMap f xs
+myMap f = foldl (\acc x -> acc ++ [f x]) []
 
 double :: Num a => a -> a
 double x = x * 2
