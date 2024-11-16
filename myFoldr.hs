@@ -1,5 +1,5 @@
 _myFoldl :: (a -> b -> b) -> b -> [a] -> b
-_myFoldl _ acc [] = acc
+_myFoldl _ acc []     = acc
 _myFoldl f acc (x:xs) = _myFoldl f (f x acc) xs
 
 myFoldr :: (a -> b -> b) -> b -> [a] -> b

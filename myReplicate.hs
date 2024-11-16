@@ -4,4 +4,4 @@ myReplicate x a = a : myReplicate (x - 1) a
 
 main = do
     print(myReplicate 7 False)
-    
+

@@ -1,6 +1,6 @@
 myElem :: Eq a => a -> [a] -> Bool
 myElem x [] = False
-myElem x (y:ys) 
+myElem x (y:ys)
     | x == y = True
     | otherwise = myElem x ys
 

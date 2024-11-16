@@ -13,8 +13,8 @@ myQsort :: Ord a => [a] -> [a]
 myQsort [] = []
 myQsort [x] = [x]
 myQsort (x:xs) = myQsort small ++ [x] ++ myQsort bigOrEqual
-  where small = [a | a <- xs, a < x] 
-        bigOrEqual = [a | a <- xs, a >= x] 
+  where small = [a | a <- xs, a < x]
+        bigOrEqual = [a | a <- xs, a >= x]
 
 
 main = do

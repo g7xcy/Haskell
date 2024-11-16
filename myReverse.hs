@@ -1,5 +1,5 @@
 myReverse :: [a] -> [a]
-myReverse [] = []
+myReverse []     = []
 myReverse (x:xs) = myReverse xs ++ [x]
 
 main = do
