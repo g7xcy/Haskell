@@ -22,7 +22,7 @@ main = do
     print(sum . takeWhile (<10000) . filter odd $ map (^2) $ [1..])
     print(sum . takeWhile (<10000). filter odd . map (^2) $ [1..])
 
-    print 
-        $  "`$` likes pipeline operator in Elixir;" 
-        ++ "`.` will create a new function." 
+    print
+        $  "`$` likes pipeline operator in Elixir;"
+        ++ "`.` will create a new function."
         ++ "Both have similar functions, but focus on different concepts."
