@@ -1,10 +1,8 @@
-_myFoldl :: (a -> b -> b) -> b -> [a] -> b
-_myFoldl _ acc []     = acc
-_myFoldl f acc (x:xs) = _myFoldl f (f x acc) xs
-
+-- Actually, this is the source code from Haskell :)
 myFoldr :: (a -> b -> b) -> b -> [a] -> b
-myFoldr f acc xs = _myFoldl f acc (reverse xs)
+myFoldr f i [] = i
+myFoldr f i (x:xs) = f x (myFoldr f i xs)
 
 main = do
-    print(myFoldr (/) 2 [8,12,24,4])
-    print(_myFoldl (/) 2 [8,12,24,4])
+    print $ myFoldr (+) 0 [1..100]
+    print $ myFoldr (&&) True (repeat False)
