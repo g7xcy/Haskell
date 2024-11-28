@@ -1,0 +1,43 @@
+# Ignore build directories
+dist/
+dist-*
+cabal-dev/
+.stack-work/
+.hpc/
+.hsenv/
+.cabal-sandbox/
+.HTF/
+
+# Ignore Cabal and Stack configuration files
+cabal.sandbox.config
+cabal.project.local
+cabal.project.local~
+.ghc.environment.*
+
+# Ignore GHC and Haskell intermediate and output files
+*.o
+*.hi
+*.hie
+*.chi
+*.chs.h
+*.dyn_o
+*.dyn_hi
+*.prof
+*.aux
+*.hp
+*.eventlog
+
+# Ignore GHC-generated executable files
+*.
+
+# Ignore editor and IDE specific files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.iml
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
