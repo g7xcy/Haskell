@@ -1,4 +1,4 @@
-myMaximum :: Ord a => [a] -> a
+myMaximum :: (Ord a) => [a] -> a
 -- myMaximum []     = error "not empty list expected"
 -- myMaximum [x]    = x
 -- myMaximum (x:xs) = max x (myMaximum xs)
@@ -7,4 +7,4 @@ myMaximum :: Ord a => [a] -> a
 myMaximum = foldl1 max
 
 main = do
-    print(myMaximum [1, 10, 8, 19, -2, 3, 0, 4])
+  print (myMaximum [1, 10, 8, 19, -2, 3, 0, 4])

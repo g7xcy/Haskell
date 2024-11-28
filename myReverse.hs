@@ -1,4 +1,4 @@
-import           Data.List (foldl')
+import Data.List (foldl')
 
 myReverse :: [a] -> [a]
 -- myReverse []     = []
@@ -9,4 +9,4 @@ myReverse :: [a] -> [a]
 myReverse = foldl' (flip (:)) []
 
 main = do
-    print(myReverse [1..10])
+  print (myReverse [1 .. 10])

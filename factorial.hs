@@ -2,6 +2,6 @@ factorial :: Int -> Int
 factorial 0 = 1
 factorial n = n * factorial (n - 1)
 
-main :: IO()
+main :: IO ()
 main = do
-    print(factorial 10)
+  print (factorial 10)

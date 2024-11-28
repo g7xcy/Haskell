@@ -4,4 +4,4 @@ myLength :: [a] -> Int
 myLength = foldl (\acc _ -> acc + 1) 0
 
 main = do
-    print(myLength [1..100])
+  print (myLength [1 .. 100])

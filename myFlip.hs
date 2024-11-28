@@ -8,5 +8,5 @@ f :: a -> a -> a
 f x y = x
 
 main = do
-    print(f 1 2)
-    print(myFlip f 1 2)
+  print (f 1 2)
+  print (myFlip f 1 2)

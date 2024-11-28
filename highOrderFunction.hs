@@ -7,7 +7,5 @@ add5 = add 5
 add15 :: Int -> Int
 add15 = add5 10
 
-
-
 main = do
-    print( add15 1)
+  print (add15 1)

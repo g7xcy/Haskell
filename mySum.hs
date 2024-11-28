@@ -1,4 +1,4 @@
-mySum :: Num a => [a] -> a
+mySum :: (Num a) => [a] -> a
 -- mySum []     = 0
 -- mySum (x:xs) = x + mySum xs
 
@@ -7,4 +7,4 @@ mySum :: Num a => [a] -> a
 mySum = foldl1 (+)
 
 main = do
-    print(mySum [1..100])
+  print (mySum [1 .. 100])
