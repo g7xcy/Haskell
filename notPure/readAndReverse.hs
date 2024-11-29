@@ -1,12 +1,14 @@
-splitOn :: (Eq a) => a -> [a] -> ([a], [a])
--- splitOn a = let f (left, right) = if null right then (left, []) else (left, tail right) in f . span (/= a)
-splitOn a =
-  let f (left, right) = case right of
-        [] -> (left, [])
-        (_ : xs) -> (left, xs)
-   in f . span (/= a)
+reverseWords :: String -> String
+reverseWords = unwords . map reverse . words
 
-main = do
-  -- line <- getLine
-  print (splitOn ' ' "Hello World")
-  print (splitOn ' ' "HelloWorld")
+readAndReverse :: IO ()
+readAndReverse = do
+  line <- getLine
+  if null line
+    then return ()
+    else do
+      print $ reverseWords line
+      readAndReverse
+
+main :: IO ()
+main = readAndReverse
