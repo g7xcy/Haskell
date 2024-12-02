@@ -14,3 +14,5 @@ myWithFile path mode = bracket (openFile path mode) hClose
 
 main = do
   myWithFile "/Users/I584533/personal_workspace/Haskell/notPure/Sonnet106.txt" ReadMode (hGetContents >=> putStrLn)
+
+-- bracket (openFile "/Users/I584533/personal_workspace/Haskell/notPure/Sonnet106.txt" ReadMode) hClose (hGetContents >=> putStrLn)
