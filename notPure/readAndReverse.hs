@@ -12,7 +12,6 @@ readAndReverse = do
 
 main :: IO ()
 main = readAndReverse
-
 -- line <- getLine
 -- if null line
 --   then return ()

@@ -1,6 +1,6 @@
 myFind :: (a -> Bool) -> [a] -> Maybe a
 myFind _ [] = Nothing
-myFind f (x : xs)
+myFind f (x:xs)
   | f x = Just x
   | otherwise = myFind f xs
 

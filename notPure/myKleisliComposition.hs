@@ -21,4 +21,8 @@ getShortString = myKleisliComposition filterShortString hGetContents
 putShortStrLn :: Handle -> IO ()
 putShortStrLn = myKleisliComposition putStrLn getShortString
 
-main = withFile "/Users/I584533/personal_workspace/Haskell/notPure/Sonnet106.txt" ReadMode putShortStrLn
+main =
+  withFile
+    "/Users/I584533/personal_workspace/Haskell/notPure/Sonnet106.txt"
+    ReadMode
+    putShortStrLn

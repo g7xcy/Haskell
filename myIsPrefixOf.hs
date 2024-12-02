@@ -1,7 +1,7 @@
 myIsPrefixOf :: (Eq a) => [a] -> [a] -> Bool
 myIsPrefixOf _ [] = False
 myIsPrefixOf [] _ = True
-myIsPrefixOf (x : xs) (y : ys)
+myIsPrefixOf (x:xs) (y:ys)
   | x == y = myIsPrefixOf xs ys
   | otherwise = False
 
