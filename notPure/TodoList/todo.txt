@@ -1,0 +1,3 @@
+Join daily scrum meeting
+Write a document to explain ContentHub Migration.
+Monitor DwC
