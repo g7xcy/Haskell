@@ -9,4 +9,4 @@ fibonacci :: [Integer]
 fibonacci = 1 : 1 : zipWith (+) fibonacci (drop 1 fibonacci)
 
 main = do
-    print( take 4 fibonacci)
+  print (take 4 fibonacci)
