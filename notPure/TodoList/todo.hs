@@ -1,6 +1,5 @@
 import Control.Exception (bracketOnError)
-import Control.Monad ((>=>))
-import Data.List (delete, lookup)
+import Data.List (lookup)
 import Data.Maybe (fromMaybe)
 import System.Directory (removeFile, renameFile)
 import System.Environment (getArgs)
