@@ -1,7 +1,7 @@
 import Control.Exception (bracketOnError)
 import Data.List (lookup)
 import Data.Maybe (fromMaybe)
-import System.Directory (removeFile, renameFile)
+import System.Directory (doesPathExist, removeFile, renameFile)
 import System.Environment (getArgs)
 import System.IO (Handle, appendFile, hClose, hPutStrLn, openTempFile, readFile)
 
@@ -108,5 +108,13 @@ removeAtIndex i xs =
 -- Main function to get command line arguments and dispatch commands
 main :: IO ()
 main = do
-  (command:args) <- getArgs
-  dispatch command args
+  args <- getArgs
+  case args of
+    [] ->
+      putStrLn
+        "No command provided. Use '--help' for a list of available commands."
+    (command:path:args) -> do
+      exisit <- doesPathExist path
+      if exisit
+        then dispatch command (path : args)
+        else putStrLn $ "File " ++ path ++ " doesn't exist"
