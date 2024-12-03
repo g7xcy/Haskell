@@ -112,9 +112,12 @@ main = do
   case args of
     [] ->
       putStrLn
-        "No command provided. Use '--help' for a list of available commands."
+        "No file and command provided. Use '--help' for a list of available commands."
+    [command] ->
+      putStrLn
+        "No file provided. Use '--help' for a list of available commands."
     (command:path:args) -> do
-      exisit <- doesPathExist path
-      if exisit
+      exists <- doesPathExist path
+      if exists
         then dispatch command (path : args)
         else putStrLn $ "File " ++ path ++ " doesn't exist"
