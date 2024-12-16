@@ -2,7 +2,7 @@ import Data.List (span)
 
 myGroupBy :: (a -> a -> Bool) -> [a] -> [[a]]
 myGroupBy _ [] = []
-myGroupBy p (x:xs) = (x : ys) : myGroupBy p zs
+myGroupBy p (x : xs) = (x : ys) : myGroupBy p zs
   where
     (ys, zs) = span (p x) xs
 

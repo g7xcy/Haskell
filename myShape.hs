@@ -1,9 +1,10 @@
 module Shape
-  ( 
-  ) where
+  (
+  )
+where
 
-data Point =
-  Point Float Float
+data Point
+  = Point Float Float
   deriving (Show)
 
 data Shape

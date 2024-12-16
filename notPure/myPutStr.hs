@@ -1,6 +1,6 @@
 myPutStr :: String -> IO ()
 myPutStr [] = return ()
-myPutStr (c:xs) = do
+myPutStr (c : xs) = do
   putChar c
   myPutStr xs
 

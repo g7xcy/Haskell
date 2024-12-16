@@ -3,4 +3,4 @@ myHead :: [a] -> a
 myHead = foldl1 const
 
 main = do
-  print (myHead [1,2 .. 10])
+  print (myHead [1, 2 .. 10])

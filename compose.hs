@@ -11,23 +11,26 @@ main = do
   -- sum . replicate 5 = \x -> sum(replicate 5 x) = \x -> sum $ replicate 5 x
   print $ (sum . replicate 5 $ max 6.7 8.9) == (8.9 * 5)
   print
-    (replicate
-       3
-       (product (map (* 3) (zipWith max [1, 2, 3, 4, 5] [4, 5, 6, 7, 8]))))
+    ( replicate
+        3
+        (product (map (* 3) (zipWith max [1, 2, 3, 4, 5] [4, 5, 6, 7, 8])))
+    )
   print
-    (replicate 3
-       $ product
-       $ map (* 3)
-       $ zipWith max [1, 2, 3, 4, 5] [4, 5, 6, 7, 8])
+    ( replicate 3 $
+        product $
+          map (* 3) $
+            zipWith max [1, 2, 3, 4, 5] [4, 5, 6, 7, 8]
+    )
   print
-    (replicate 3 . product . map (* 3) . zipWith max [1, 2, 3, 4, 5]
-       $ [4, 5, 6, 7, 8])
+    ( replicate 3 . product . map (* 3) . zipWith max [1, 2, 3, 4, 5] $
+        [4, 5, 6, 7, 8]
+    )
   print (sum (takeWhile (< 10000) (filter odd (map (^ 2) [1 ..]))))
   print (sum $ takeWhile (< 10000) $ filter odd $ map (^ 2) $ [1 ..])
   print (sum . takeWhile (< 10000) $ filter odd $ map (^ 2) $ [1 ..])
   print (sum . takeWhile (< 10000) . filter odd $ map (^ 2) $ [1 ..])
   print (sum . takeWhile (< 10000) . filter odd . map (^ 2) $ [1 ..])
-  print
-    $ "`$` likes pipeline operator in Elixir;"
-        ++ "`.` will create a new function."
-        ++ "Both have similar functions, but focus on different concepts."
+  print $
+    "`$` likes pipeline operator in Elixir;"
+      ++ "`.` will create a new function."
+      ++ "Both have similar functions, but focus on different concepts."

@@ -16,13 +16,13 @@
 -- (\x -> f x) :: a -> b, where x is the value of type r, thus
 -- (\x -> (f x) (g x)) :: b, means that "result of applying (a -> b) to a is b"
 main = do
-    print $ (+) <$> (*97) <*> (+101) $ 5
-    print $ (+) ((*) 97 5) ((+) 101 5)
-    print $ (97 * 5) + (101 + 5)
+  print $ (+) <$> (* 97) <*> (+ 101) $ 5
+  print $ (+) ((*) 97 5) ((+) 101 5)
+  print $ (97 * 5) + (101 + 5)
 
-    print $ pure (*3) <*> Just 5
-    print $ pure(replicate 10) <*> "HelloWorld"
-    print $ pure(replicate 10) <*> ["HelloWorld"]
+  print $ pure (* 3) <*> Just 5
+  print $ pure (replicate 10) <*> "HelloWorld"
+  print $ pure (replicate 10) <*> ["HelloWorld"]
 
-    print $ liftA2 (*) (Just 9) (pure 11)
-    let f = liftA2 (:) in print $ f (Just 9) (f (Just 3) (Just []))
+  print $ liftA2 (*) (Just 9) (pure 11)
+  let f = liftA2 (:) in print $ f (Just 9) (f (Just 3) (Just []))

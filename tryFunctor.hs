@@ -13,4 +13,4 @@
 -- For fmap, think it as "apply the function f on the value in the functor g, which is the value of type a",
 -- then the result is (r -> "apply (a -> b) on a"), means that "give an input of type r, create an output of type b"
 main = do
-    print $ (+1) <$> (*7) $ 10
+  print $ (+ 1) <$> (* 7) $ 10

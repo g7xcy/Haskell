@@ -9,13 +9,13 @@ newtype Pair b a = Pair {getPair :: (a, b)} deriving (Eq, Show, Read, Ord)
 -- The `Pair c` is a partially applied type constructor.
 -- For example, `Pair Int`. Its kind is `* -> *`.
 instance Functor (Pair c) where
-    fmap :: (a -> b) -> Pair c a -> Pair c b
-    -- The `Pair (x, y)` here is a value constructed by the newtype value constructor `Pair`.
-    -- `x` and `y` are concrete values.
-    -- The same for `Pair (f x, y)`.
-    fmap f (Pair (x, y)) = Pair (f x, y)
+  fmap :: (a -> b) -> Pair c a -> Pair c b
+  -- The `Pair (x, y)` here is a value constructed by the newtype value constructor `Pair`.
+  -- `x` and `y` are concrete values.
+  -- The same for `Pair (f x, y)`.
+  fmap f (Pair (x, y)) = Pair (f x, y)
 
 -- Summary: the newtype `Pair b a` swaps the types of `(a, b)`.
 main = do
-    print $ (getPair . Pair) (1, 23)
-    print $ (+10) <$> Pair (1, 12)
+  print $ (getPair . Pair) (1, 23)
+  print $ (+ 10) <$> Pair (1, 12)

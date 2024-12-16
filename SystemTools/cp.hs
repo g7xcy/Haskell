@@ -16,13 +16,15 @@ copy sourcePath targetPath = do
   fileExists <- doesFileExist sourcePath
   if not fileExists
     then putStrLn ("File " ++ sourcePath ++ " doesn't exist.")
-    else bracketOnError
-           (openTempFile "." "temp")
-           closeTempFile
-           (\(tempPath, handler) -> do
-              (B.readFile >=> B.hPutStr handler) sourcePath
-              hClose handler
-              renameFile tempPath targetPath)
+    else
+      bracketOnError
+        (openTempFile "." "temp")
+        closeTempFile
+        ( \(tempPath, handler) -> do
+            (B.readFile >=> B.hPutStr handler) sourcePath
+            hClose handler
+            renameFile tempPath targetPath
+        )
 
 closeTempFile :: (FilePath, Handle) -> IO ()
 closeTempFile (tempPath, handler) = do
@@ -30,5 +32,5 @@ closeTempFile (tempPath, handler) = do
   removeFile tempPath
 
 main = do
-  (sourcePath:targetPath:_) <- getArgs
+  (sourcePath : targetPath : _) <- getArgs
   copy sourcePath targetPath

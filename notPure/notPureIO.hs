@@ -1,10 +1,10 @@
 splitOn :: (Eq a) => a -> [a] -> ([a], [a])
 splitOn _ [] = ([], [])
-splitOn a (x:xs)
+splitOn a (x : xs)
   | x == a = ([], xs)
   | otherwise =
-    let (left, right) = splitOn a xs
-     in (x : left, right)
+      let (left, right) = splitOn a xs
+       in (x : left, right)
 
 main = do
   putStrLn "What's your name?"

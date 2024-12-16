@@ -2,5 +2,5 @@
 -- bind :: (a -> Monad b) -> Monad a -> Monad b
 
 main = do
-    print $ concatMap init [[1, 1, 1], [2, 2]]
-    print $ init =<< [[1, 1, 1], [2, 2]]
+  print $ concatMap init [[1, 1, 1], [2, 2]]
+  print $ init =<< [[1, 1, 1], [2, 2]]

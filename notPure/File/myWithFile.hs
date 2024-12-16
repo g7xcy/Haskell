@@ -16,4 +16,5 @@ main = do
     "/Users/I584533/personal_workspace/Haskell/notPure/Sonnet106.txt"
     ReadMode
     (hGetContents >=> putStrLn)
+
 -- bracket (openFile "/Users/I584533/personal_workspace/Haskell/notPure/Sonnet106.txt" ReadMode) hClose (hGetContents >=> putStrLn)

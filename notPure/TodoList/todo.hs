@@ -14,34 +14,35 @@ dispatch :: Command -> Args -> IO ()
 dispatch command = fromMaybe unknownCommand (lookup command commands)
   where
     commands =
-      [ ("--add", add)
-      , ("-a", add)
-      , ("--bump", bump)
-      , ("-b", bump)
-      , ("--view", view)
-      , ("-v", view)
-      , ("--remove", remove)
-      , ("-r", remove)
-      , ("--help", help)
-      , ("-h", help)
-      , ("-?", help)
+      [ ("--add", add),
+        ("-a", add),
+        ("--bump", bump),
+        ("-b", bump),
+        ("--view", view),
+        ("-v", view),
+        ("--remove", remove),
+        ("-r", remove),
+        ("--help", help),
+        ("-h", help),
+        ("-?", help)
       ]
     unknownCommand =
-      const
-        $ putStrLn
-            ("Unknown command: "
-               ++ command
-               ++ ". Use '--help' for a list of available commands.")
+      const $
+        putStrLn
+          ( "Unknown command: "
+              ++ command
+              ++ ". Use '--help' for a list of available commands."
+          )
 
 -- Display help information
 help :: Args -> IO ()
 help [] =
   mapM_
     putStrLn
-    [ "Usage: add <filePath> <content>"
-    , "Usage: bump <filePath> <index>"
-    , "Usage: view <filePath>"
-    , "Usage: remove <filePath> <index>"
+    [ "Usage: add <filePath> <content>",
+      "Usage: bump <filePath> <index>",
+      "Usage: view <filePath>",
+      "Usage: remove <filePath> <index>"
     ]
 help ["add"] = putStrLn "Usage: add <filePath> <content>"
 help ["bump"] = putStrLn "Usage: bump <filePath> <index>"
@@ -67,8 +68,8 @@ bump _ = help ["bump"]
 view :: Args -> IO ()
 view [path] = do
   rawTodoItems <- readTodoItems path
-  mapM_ putStrLn
-    $ zipWith (\index item -> show index ++ " - " ++ item) [1 ..] rawTodoItems
+  mapM_ putStrLn $
+    zipWith (\index item -> show index ++ " - " ++ item) [1 ..] rawTodoItems
 view _ = putStrLn "Usage: view <filePath>"
 
 -- Remove an item from the todo list
@@ -116,7 +117,7 @@ main = do
     [command] ->
       putStrLn
         "No file provided. Use '--help' for a list of available commands."
-    (command:path:args) -> do
+    (command : path : args) -> do
       exists <- doesPathExist path
       if exists
         then dispatch command (path : args)

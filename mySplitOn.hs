@@ -4,5 +4,5 @@ mySplitOn a =
   let f (left, right) =
         case right of
           [] -> (left, [])
-          (_:xs) -> (left, xs)
+          (_ : xs) -> (left, xs)
    in f . span (/= a)
